@@ -2065,13 +2065,13 @@ static void set_desc(void)
 		return;
 
 	if (vendor)
-		strlcpy(mfr_desc, vendor, sizeof(mfr_desc));
+		strlcpy1(mfr_desc, vendor, sizeof(mfr_desc));
 	if (name || version)
 		snprintf(hw_desc, sizeof(hw_desc), "%s %s",
 			 name ? name : "",
 			 version ? version : "");
 	if (serial)
-		strlcpy(serial_num, serial, sizeof(serial_num));
+		strlcpy1(serial_num, serial, sizeof(serial_num));
 }
 
 static int __init dp_init(void)
